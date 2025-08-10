@@ -1,0 +1,15 @@
+<include>
+  <extension name="public-block">
+    <condition field="destination_number" expression="^.*$">
+      <!-- Apply INVITE rate limit per source IP -->
+      <action application="limit" data="hash invite_per_ip ${network_addr} invite"/>
+      <action application="limit_usage" data="hash invite_per_ip ${network_addr} invite"/>
+      <anti-action application="respond" data="503 Service Unavailable"/>
+      <anti-action application="hangup"/>
+      <action application="respond" data="480 Temporarily Unavailable"/>
+      <action application="hangup"/>
+    </condition>
+  </extension>
+
+  <!-- Optional: REGISTER limiting via event socket hook or dedicated profile -->
+</include>

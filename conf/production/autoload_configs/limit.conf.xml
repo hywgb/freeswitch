@@ -1,0 +1,33 @@
+<configuration name="limit.conf" description="LIMIT Configuration (Production)">
+  <settings>
+    <!-- Choose backend: hash-db (default), db, memcache, redis -->
+    <!-- <param name="db-type" value="hash"/> -->
+    <!-- <param name="odbc-dsn" value="dsn:user:pass"/> -->
+    <!-- <param name="memcache-servers" value="127.0.0.1:11211"/> -->
+    <!-- <param name="redis-host" value="127.0.0.1"/> -->
+    <!-- <param name="redis-port" value="6379"/> -->
+  </settings>
+  <profiles>
+    <!-- Example: limit inbound INVITE per source -->
+    <profile name="invite_per_ip">
+      <settings>
+        <param name="db-name" value="hash"/>
+        <param name="realm" value="invite:${sip_public_ip}"/>
+      </settings>
+      <limits>
+        <limit name="invite" interval="60" max="60" />
+      </limits>
+    </profile>
+
+    <!-- Example: limit REGISTER per account -->
+    <profile name="register_per_user">
+      <settings>
+        <param name="db-name" value="hash"/>
+        <param name="realm" value="register"/>
+      </settings>
+      <limits>
+        <limit name="register" interval="60" max="30" />
+      </limits>
+    </profile>
+  </profiles>
+</configuration>

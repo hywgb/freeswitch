@@ -1,0 +1,51 @@
+<profile name="internal">
+  <aliases>
+    <alias name="default"/>
+  </aliases>
+  <gateways/>
+  <domains>
+    <domain name="$${domain}" parse="true" alias="true"/>
+  </domains>
+  <settings>
+    <param name="user-agent-string" value="FreeSWITCH"/>
+    <param name="sip-ip" value="$${local_ip_v4}"/>
+    <param name="rtp-ip" value="$${local_ip_v4}"/>
+    <param name="sip-port" value="$${internal_sip_port}"/>
+    <param name="context" value="default"/>
+    <param name="apply-inbound-acl" value="domains"/>
+    <param name="apply-nat-acl" value="nat.auto"/>
+    <param name="ext-rtp-ip" value="$${external_rtp_ip}"/>
+    <param name="ext-sip-ip" value="$${external_sip_ip}"/>
+
+    <!-- RTP timing and jitterbuffer -->
+    <param name="rtp-timer-name" value="soft"/>
+    <!-- <param name="auto-jitterbuffer-msec" value="60"/> -->
+
+    <!-- Security hardening -->
+    <param name="auth-calls" value="true"/>
+    <param name="inbound-reg-force-matching-username" value="true"/>
+    <param name="auth-all-packets" value="false"/>
+    <param name="nonce-ttl" value="60"/>
+    <!-- <param name="disable-register" value="true"/> -->
+    <!-- <param name="accept-blind-auth" value="false"/> -->
+
+    <!-- Transcoding policy: prefer passthrough; enable only needed codecs -->
+    <!-- <param name="disable-transcoding" value="true"/> -->
+
+    <!-- SIP timers -->
+    <!-- <param name="minimum-session-expires" value="120"/> -->
+    <!-- <param name="force-subscription-expires" value="300"/> -->
+
+    <!-- TLS placeholders: replace cert paths and enable as needed -->
+    <!-- <param name="tls" value="true"/> -->
+    <!-- <param name="tls-only" value="false"/> -->
+    <!-- <param name="tls-bind-params" value="transport=tls"/> -->
+    <!-- <param name="tls-sip-port" value="$${internal_tls_port}"/> -->
+    <!-- <param name="tls-cert-dir" value="/etc/freeswitch/tls"/> -->
+    <!-- <param name="tls-verify-date" value="true"/> -->
+    <!-- <param name="tls-verify-policy" value="none"/> -->
+    <!-- <param name="tls-verify-depth" value="2"/> -->
+    <!-- <param name="tls-version" value="$${sip_tls_version}"/> -->
+    <!-- <param name="tls-ciphers" value="$${sip_tls_ciphers}"/> -->
+  </settings>
+</profile>

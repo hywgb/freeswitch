@@ -1,0 +1,7 @@
+<configuration name="logfile.conf" description="File Logging (Production)">
+  <settings>
+    <param name="logfile" value="/var/log/freeswitch/freeswitch.log"/>
+    <param name="format" value="$${strftime(%Y-%m-%d %H:%M:%S.%Q)} [%-5.5P] %v"/>
+    <param name="rollover" value="0"/>
+  </settings>
+</configuration>

@@ -1,0 +1,22 @@
+<include>
+  <!-- Production directory: no default users. Add explicit users under directory/ as needed. -->
+  <domain name="$${domain}">
+    <params>
+      <param name="dial-string" value="{sip_contact_user=${dialed_user}}${sofia_contact(${dialed_user}@${dialed_domain})}"/>
+    </params>
+    <variables>
+      <variable name="toll_allow" value="domestic,international,local"/>
+      <variable name="accountcode" value="${domain_name}"/>
+      <variable name="user_context" value="default"/>
+      <variable name="effective_caller_id_name" value="${dialed_user}"/>
+      <variable name="effective_caller_id_number" value="${dialed_user}"/>
+    </variables>
+    <groups>
+      <group name="default">
+        <users>
+          <!-- Define users here with <user id="1000"> ... </user> -->
+        </users>
+      </group>
+    </groups>
+  </domain>
+</include>

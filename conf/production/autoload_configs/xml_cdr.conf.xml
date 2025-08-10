@@ -1,0 +1,22 @@
+<configuration name="xml_cdr.conf" description="XML CDR Logger (Production)">
+  <settings>
+    <!-- Disable disk logging by default; prefer remote CDR via HTTP(S) -->
+    <param name="log-dir" value=""/>
+    <param name="log-b-leg" value="false"/>
+    <param name="prefix-a-leg" value="true"/>
+    <param name="encode" value="true"/>
+
+    <!-- Enable one of the following to push to your CDR endpoint -->
+    <!-- <param name="url" value="https://cdr.example.com/cdr"/> -->
+    <!-- <param name="cred" value="user:pass"/> -->
+    <!-- <param name="retries" value="2"/> -->
+    <!-- <param name="delay" value="1"/> -->
+
+    <!-- TLS options (uncomment as required) -->
+    <!-- <param name="enable-cacert-check" value="true"/> -->
+    <!-- <param name="enable-ssl-verifyhost" value="true"/> -->
+    <!-- <param name="ssl-cert-path" value="$${certs_dir}/public_key.pem"/> -->
+    <!-- <param name="ssl-key-path" value="$${certs_dir}/private_key.pem"/> -->
+    <!-- <param name="ssl-key-password" value="change_me"/> -->
+  </settings>
+</configuration>
