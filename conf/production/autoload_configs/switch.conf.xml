@@ -13,10 +13,17 @@
 
     <param name="enable-clock-nanosleep" value="true"/>
     <param name="enable-monotonic-timing" value="true"/>
+    <param name="threaded-system-exec" value="true"/>
 
     <param name="rtp-start-port" value="16384"/>
     <param name="rtp-end-port" value="32768"/>
     <param name="rtp-port-usage-robustness" value="true"/>
+
+    <!-- Threading/timer hints:
+         - Consider pinning timers or setting timer-affinity on NUMA/high core count
+         - Increase sessions-per-second with upstream rate limiting and backpressure
+    -->
+    <!-- <param name="timer-affinity" value="disabled"/> -->
 
     <!-- Database: migrate core DB to external PG/MariaDB in production -->
     <!-- <param name="core-db-dsn" value="postgresql://user:pass@db/freeswitch" /> -->
