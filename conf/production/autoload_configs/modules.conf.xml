@@ -7,6 +7,9 @@
     <!-- Event Handlers -->
     <load module="mod_event_socket"/>
 
+    <!-- CDR -->
+    <load module="mod_xml_cdr"/>
+
     <!-- Endpoints -->
     <load module="mod_sofia"/>
     <load module="mod_loopback"/>
