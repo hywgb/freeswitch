@@ -17,6 +17,10 @@
     <param name="ext-rtp-ip" value="$${external_rtp_ip}"/>
     <param name="ext-sip-ip" value="$${external_sip_ip}"/>
 
+    <!-- RTP timing and jitterbuffer -->
+    <param name="rtp-timer-name" value="soft"/>
+    <!-- <param name="auto-jitterbuffer-msec" value="60"/> -->
+
     <!-- Security hardening -->
     <param name="auth-calls" value="true"/>
     <param name="inbound-reg-force-matching-username" value="true"/>
