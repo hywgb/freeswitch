@@ -13,4 +13,9 @@
 
   <!-- Feature flags -->
   <X-PRE-PROCESS cmd="set" data="enable_test_apps=false"/>
+
+  <!-- TLS defaults -->
+  <X-PRE-PROCESS cmd="set" data="external_tls_port=5061"/>
+  <X-PRE-PROCESS cmd="set" data="sip_tls_version=tlsv1.2"/>
+  <X-PRE-PROCESS cmd="set" data="sip_tls_ciphers=HIGH:!aNULL:!MD5"/>
 </include>
