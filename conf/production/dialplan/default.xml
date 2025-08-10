@@ -1,0 +1,13 @@
+<include>
+  <extension name="echo-test" continue="false">
+    <condition field="destination_number" expression="^9999$">
+      <condition field="${enable_test_apps}" expression="^true$">
+        <action application="answer"/>
+        <action application="echo"/>
+        <action application="hangup"/>
+      </condition>
+      <action application="respond" data="404 Not Found"/>
+      <action application="hangup"/>
+    </condition>
+  </extension>
+</include>

@@ -1,0 +1,8 @@
+<include>
+  <extension name="public-block">
+    <condition field="destination_number" expression="^.*$">
+      <action application="respond" data="480 Temporarily Unavailable"/>
+      <action application="hangup"/>
+    </condition>
+  </extension>
+</include>

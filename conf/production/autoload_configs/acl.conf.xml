@@ -1,0 +1,22 @@
+<configuration name="acl.conf" description="Access Control Lists (Production)">
+  <network-lists>
+    <list name="loopback.auto" default="deny">
+      <node type="allow" cidr="127.0.0.0/8"/>
+      <node type="allow" cidr="::1/128"/>
+    </list>
+
+    <list name="domains" default="deny">
+      <!-- Allow local subnets (replace with your actual internal ranges) -->
+      <node type="allow" cidr="10.0.0.0/8"/>
+      <node type="allow" cidr="172.16.0.0/12"/>
+      <node type="allow" cidr="192.168.0.0/16"/>
+      <!-- Add specific trusted IPs here -->
+      <!-- <node type="allow" cidr="203.0.113.10/32"/> -->
+    </list>
+
+    <list name="external-sip" default="deny">
+      <!-- Populate with trusted SBCs/Proxies/Public IPs -->
+      <!-- <node type="allow" cidr="198.51.100.20/32"/> -->
+    </list>
+  </network-lists>
+</configuration>
