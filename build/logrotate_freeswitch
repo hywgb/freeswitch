@@ -1,0 +1,14 @@
+# /etc/logrotate.d/freeswitch
+/var/log/freeswitch/*.log {
+  daily
+  rotate 14
+  missingok
+  compress
+  delaycompress
+  notifempty
+  create 0640 freeswitch freeswitch
+  sharedscripts
+  postrotate
+    /usr/bin/killall -HUP freeswitch 2>/dev/null || true
+  endscript
+}

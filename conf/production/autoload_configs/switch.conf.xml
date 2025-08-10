@@ -1,0 +1,25 @@
+<configuration name="switch.conf" description="Core Configuration (Production)">
+  <settings>
+    <param name="colorize-console" value="false"/>
+    <param name="dialplan-timestamps" value="true"/>
+    <param name="max-db-handles" value="100"/>
+    <param name="db-handle-timeout" value="10"/>
+
+    <param name="max-sessions" value="2000"/>
+    <param name="sessions-per-second" value="20"/>
+    <param name="loglevel" value="info"/>
+
+    <param name="dump-cores" value="yes"/>
+
+    <param name="enable-clock-nanosleep" value="true"/>
+    <param name="enable-monotonic-timing" value="true"/>
+
+    <param name="rtp-start-port" value="16384"/>
+    <param name="rtp-end-port" value="32768"/>
+    <param name="rtp-port-usage-robustness" value="true"/>
+
+    <!-- Database: migrate core DB to external PG/MariaDB in production -->
+    <!-- <param name="core-db-dsn" value="postgresql://user:pass@db/freeswitch" /> -->
+    <!-- <param name="core-db-dsn" value="mariadb://Server=db;Database=freeswitch;Uid=user;Pwd=pass;" /> -->
+  </settings>
+</configuration>

@@ -1,0 +1,11 @@
+<document type="freeswitch/xml">
+  <section name="configuration" description="Production Configuration">
+    <X-PRE-PROCESS cmd="include" data="autoload_configs/*.xml"/>
+  </section>
+  <section name="dialplan" description="Production Dialplan">
+    <X-PRE-PROCESS cmd="include" data="dialplan/*.xml"/>
+  </section>
+  <section name="directory" description="Production Directory">
+    <X-PRE-PROCESS cmd="include" data="directory/*.xml"/>
+  </section>
+</document>
